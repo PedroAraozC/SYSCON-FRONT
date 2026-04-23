@@ -13,6 +13,7 @@ export default function StatCard({
   color,
   loading,
   format, // "currency" | "number"
+  delay
 }) {
   const [displayValue, setDisplayValue] = useState(0);
 
@@ -64,6 +65,8 @@ export default function StatCard({
         borderRadius: "10px",
         backgroundColor: "var(--surface)",
         color: "var(--text)",
+        animation: `fadeIn 0.4s ease ${delay || 0}s forwards`,
+        opacity: 0,
       }}
     >
       <CardContent>
@@ -92,8 +95,13 @@ export default function StatCard({
                 color: color,
                 mt: 2,
                 display: "flex",
-                alignItems: "flex-end",
-                justifyContent: format !== "currency" ? "flex-end" : "center",
+                alignItems: "center",
+                justifyContent:
+                  format === "currency"
+                    ? "center"
+                    : format === "moneda"
+                      ? "flex-end"
+                      : "flex-start",
                 fontFamily: "var(--mono)",
                 minHeight: "100px",
               }}

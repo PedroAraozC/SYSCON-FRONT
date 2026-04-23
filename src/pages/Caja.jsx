@@ -272,7 +272,11 @@ export default function Caja() {
               <span className="cart-title">Venta actual</span>
               <span className="items-count">{itemsCount} items</span>
             </span>
-            <button className="clear-btn" onClick={limpiarCart}>
+            <button
+              className="clear-btn"
+              onClick={limpiarCart}
+              disabled={loading}
+            >
               Limpiar <div className="ci-emoji">🗑️</div>
             </button>
           </div>
@@ -300,6 +304,7 @@ export default function Caja() {
                     <button
                       className="qty-btn"
                       onClick={() => cambiarCantidad(item.id_producto, -1)}
+                      disabled={loading}
                     >
                       −
                     </button>
@@ -307,6 +312,7 @@ export default function Caja() {
                     <button
                       className="qty-btn"
                       onClick={() => cambiarCantidad(item.id_producto, +1)}
+                      disabled={loading}
                     >
                       +
                     </button>
@@ -317,6 +323,7 @@ export default function Caja() {
                   <button
                     className="del-btn"
                     onClick={() => quitarItem(item.id_producto)}
+                    disabled={loading}
                   >
                     ×
                   </button>
