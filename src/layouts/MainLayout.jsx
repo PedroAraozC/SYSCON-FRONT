@@ -27,6 +27,7 @@ export default function MainLayout({ children }) {
     { text: "Productos", path: "/productos" },
     { text: "MetodosDePago", path: "/metodosdepago" },
     { text: "Movimientos", path: "/movimientos" },
+    { text: "Developer", path: "/Developer" },
   ];
 
   return (

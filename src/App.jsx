@@ -6,6 +6,7 @@ import Movimientos from "./pages/Movimientos";
 import Caja from "./pages/Caja";
 import Categorias from "./pages/Categorias";
 import MetodosDePago from "./pages/MetodosDePago";
+import Developer from "./pages/Developer";
 
 export default function AppRouter() {
   return (
@@ -17,6 +18,7 @@ export default function AppRouter() {
         <Route path="/Caja" element={<Caja />} />
         <Route path="/Categorias" element={<Categorias />} />
         <Route path="/MetodosDePago" element={<MetodosDePago />} />
+        <Route path="/Developer" element={<Developer />} />
       </Routes>
     </BrowserRouter>
   );
